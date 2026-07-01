@@ -38,3 +38,5 @@ public/files/
 public/cached_pages/
 public/cached_stores/
 public/sitemap.xml.gz
+
+tasks/
