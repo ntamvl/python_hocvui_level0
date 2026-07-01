@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, RotateCcw, HelpCircle, Terminal as TerminalIcon } from 'lucide-react';
+import { highlightPython } from '../utils/pythonHighlighter';
 
 export default function PracticeColumn({ currentWeekId, initialCode, sampleCode, onRunSuccess }) {
   const [code, setCode] = useState(initialCode);
@@ -10,6 +11,7 @@ export default function PracticeColumn({ currentWeekId, initialCode, sampleCode,
   const [loadingStatus, setLoadingStatus] = useState('Đang đánh thức chú rắn Python... 🐍');
   const textareaRef = useRef(null);
   const lineNumbersRef = useRef(null);
+  const highlightRef = useRef(null);
 
   // Khởi tạo Pyodide khi component mount
   useEffect(() => {
@@ -42,10 +44,32 @@ export default function PracticeColumn({ currentWeekId, initialCode, sampleCode,
     setOutput([]);
   }, [currentWeekId, initialCode]);
 
-  // Đồng bộ hóa cuộn giữa textarea và cột số dòng
+  // Đồng bộ hóa cuộn giữa textarea, cột số dòng và phần tô màu
   const handleScroll = (e) => {
+    const { scrollTop, scrollLeft } = e.target;
     if (lineNumbersRef.current) {
-      lineNumbersRef.current.scrollTop = e.target.scrollTop;
+      lineNumbersRef.current.scrollTop = scrollTop;
+    }
+    if (highlightRef.current) {
+      highlightRef.current.scrollTop = scrollTop;
+      highlightRef.current.scrollLeft = scrollLeft;
+    }
+  };
+
+  // Hỗ trợ phím Tab để viết thụt lề 4 khoảng trắng giống các IDE xịn
+  const handleKeyDown = (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const { selectionStart, selectionEnd } = e.target;
+      const newCode = code.substring(0, selectionStart) + '    ' + code.substring(selectionEnd);
+      setCode(newCode);
+
+      // Đặt lại con trỏ chuột ngay sau 4 dấu cách vừa chèn
+      setTimeout(() => {
+        if (textareaRef.current) {
+          textareaRef.current.selectionStart = textareaRef.current.selectionEnd = selectionStart + 4;
+        }
+      }, 0);
     }
   };
 
@@ -184,15 +208,22 @@ sys.stderr = io.StringIO()
               <div key={n}>{n}</div>
             ))}
           </div>
-          <textarea
-            ref={textareaRef}
-            className="code-textarea"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            onScroll={handleScroll}
-            placeholder="# Hãy viết code Python của bạn ở đây..."
-            spellCheck="false"
-          />
+          
+          <div className="editor-input-area">
+            <pre className="code-highlight" ref={highlightRef} aria-hidden="true">
+              <code dangerouslySetInnerHTML={{ __html: highlightPython(code) + '\n' }} />
+            </pre>
+            <textarea
+              ref={textareaRef}
+              className="code-textarea"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              onScroll={handleScroll}
+              onKeyDown={handleKeyDown}
+              placeholder="# Hãy viết code Python của bạn ở đây..."
+              spellCheck="false"
+            />
+          </div>
         </div>
       </div>
 

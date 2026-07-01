@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import { highlightPython } from '../utils/pythonHighlighter';
 
 // Hàm helper để loại bỏ các chuỗi đánh dấu cảnh báo của github như [!NOTE] khỏi hiển thị
 const removeAlertPrefix = (children, ...prefixes) => {
@@ -78,7 +79,24 @@ export default function TheoryColumn({ markdownContent }) {
     <div className="theory-column markdown-body">
       <ReactMarkdown
         components={{
-          blockquote: CustomBlockquote
+          blockquote: CustomBlockquote,
+          code({ className, children, ...props }) {
+            const match = /language-(\w+)/.exec(className || '');
+            if (match && match[1] === 'python') {
+              const codeVal = String(children).replace(/\n$/, '');
+              return (
+                <code
+                  className={className}
+                  dangerouslySetInnerHTML={{ __html: highlightPython(codeVal) }}
+                />
+              );
+            }
+            return (
+              <code className={className} {...props}>
+                {children}
+              </code>
+            );
+          }
         }}
       >
         {markdownContent}
