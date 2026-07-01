@@ -24,7 +24,7 @@ Chào mừng bạn đến với **Python Học Vui**, một nền tảng học l
 ## 📂 Cấu trúc thư mục dự án
 
 ```text
-laptrinh_python_canban_v1.2/
+python_hocvui_level0/
 ├── frontend/               # Mã nguồn ứng dụng Web React + Vite
 │   ├── public/             # Tài nguyên tĩnh
 │   │   └── lessons/        # Bản sao các bài học phục vụ fetch API
@@ -65,7 +65,7 @@ Thực hiện theo các bước dưới đây để thiết lập dự án trên
 ### Bước 1: Mở thư mục dự án
 Mở terminal của bạn và di chuyển vào thư mục dự án:
 ```bash
-cd laptrinh_python_canban_v1.2
+cd python_hocvui_level0
 ```
 
 ### Bước 2: Di chuyển vào thư mục frontend và cài đặt thư viện
