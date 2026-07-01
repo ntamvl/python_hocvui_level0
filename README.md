@@ -113,7 +113,7 @@ npm run preview
 
 ## 📘 Chi tiết Chương trình học 6 tuần của bé
 
-1.  **Tuần 1: Chào bạn, mình là Python! 🐍**
+1.  **Tuần 1: Chào bạn, mình là Python!**
     *   **Khái niệm:** Giới thiệu lập trình là gì, cú pháp và cách hoạt động của lệnh in dữ liệu `print()`.
     *   **Dự án:** Bé tự viết code vẽ chú Robot dễ thương trên màn hình terminal và thay đổi lời chào của Robot.
 2.  **Tuần 2: Chiếc hộp kỳ diệu 📦**
