@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckCircle, Award } from 'lucide-react';
 
 const weeks = [
-  { id: 'week1_intro', title: 'Tuần 1: Chào bạn Python! 🐍', desc: 'Làm quen & Lệnh Print' },
+  { id: 'week1_intro', title: 'Tuần 1: Chào bạn Python!', desc: 'Làm quen & Lệnh Print' },
   { id: 'week2_variables', title: 'Tuần 2: Hộp đồ chơi 📦', desc: 'Biến & Phép toán cơ bản' },
   { id: 'week3_conditions', title: 'Tuần 3: Gương thần 🔮', desc: 'Điều kiện If - Else' },
   { id: 'week4_loops', title: 'Tuần 4: Hỏa tiễn bay 🚀', desc: 'Vòng lặp For & While' },
