@@ -1,4 +1,4 @@
-# Python Học Vui 🐍 - Lập trình Python Căn Bản cho Trẻ Em
+# Python Học Vui - Lập trình Python Căn Bản cho Trẻ Em
 
 Chào mừng bạn đến với **Python Học Vui**, một nền tảng học lập trình Python trực quan, sinh động và tương tác cao được thiết kế dành riêng cho trẻ em từ 12 tuổi trở lên. Dự án này giúp các bé làm quen với các khái niệm lập trình cơ bản thông qua giao diện kéo/thả, viết code và chạy trực tiếp ngay trên trình duyệt web.
 
