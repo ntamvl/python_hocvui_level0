@@ -456,6 +456,20 @@ body {
   pointer-events: none;
   overflow-y: auto;
   overflow-x: hidden;
+  border: none !important;
+}
+
+.code-highlight code {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  color: inherit !important;
+  border: none !important;
+  border-radius: 0 !important;
+  display: block !important;
 }
 
 /* Syntax Highlighting Colors - Kids friendly / high contrast */

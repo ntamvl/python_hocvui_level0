@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, CheckCircle, Award } from 'lucide-react';
+import { CheckCircle, Award } from 'lucide-react';
 
 const weeks = [
   { id: 'week1_intro', title: 'Tuần 1: Chào bạn Python! 🐍', desc: 'Làm quen & Lệnh Print' },
