@@ -65,6 +65,7 @@ Thực hiện theo các bước dưới đây để thiết lập dự án trên
 ### Bước 1: Mở thư mục dự án
 Mở terminal của bạn và di chuyển vào thư mục dự án:
 ```bash
+git clone git@github.com:ntamvl/python_hocvui_level0.git
 cd python_hocvui_level0
 ```
 
