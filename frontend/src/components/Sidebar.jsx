@@ -14,15 +14,15 @@ export default function Sidebar({ currentWeekId, onSelectWeek, completedWeeks })
   return (
     <aside className="kids-sidebar">
       <div className="sidebar-header">
-        <h1 className="sidebar-title">Python Học Vui 🐍</h1>
+        <h1 className="sidebar-title">Python Học Vui</h1>
         <div className="sidebar-subtitle">Lập trình cho Siêu Nhí (12+)</div>
       </div>
-      
+
       <div className="lessons-list">
         {weeks.map((week, index) => {
           const isActive = week.id === currentWeekId;
           const isCompleted = completedWeeks.includes(week.id);
-          
+
           return (
             <div
               key={week.id}
