@@ -2,6 +2,7 @@
 
 Chào mừng bạn đến với **Python Học Vui**, một nền tảng học lập trình Python trực quan, sinh động và tương tác cao được thiết kế dành riêng cho trẻ em từ 12 tuổi trở lên. Dự án này giúp các bé làm quen với các khái niệm lập trình từ căn bản đến nâng cao thông qua giao diện kéo/thả, viết code và chạy trực tiếp ngay trên trình duyệt web.
 
+![Python Học Vui](./screenshot.png)
 ---
 
 ## 🌟 Tính năng nổi bật
