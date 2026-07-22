@@ -9,7 +9,7 @@
   --bg-sidebar: #ffffff;
   --text-main: #2b2b2b;
   --font-kids: 'Nunito', 'Outfit', system-ui, -apple-system, sans-serif;
-  
+
   /* Màu sắc chủ đề cho trẻ em */
   --color-green: #58cc02;
   --color-green-dark: #46a302;
@@ -541,7 +541,7 @@ body {
 
 /* Khu vực Terminal kết quả */
 .terminal-container {
-  height: 220px;
+  min-height: 320px;
   background-color: #1a1a1a;
   border: 2px solid #333333;
   border-radius: 16px;
