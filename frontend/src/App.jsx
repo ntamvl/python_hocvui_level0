@@ -5,13 +5,23 @@ import PracticeColumn from './components/PracticeColumn';
 import confetti from 'canvas-confetti';
 
 export default function App() {
-  const [currentWeekId, setCurrentWeekId] = useState('week1_intro');
+  const [currentWeekId, setCurrentWeekId] = useState(() => {
+    const saved = localStorage.getItem('python_current_week');
+    if (!saved) return 'level1/week1_intro';
+    return saved.includes('/') ? saved : `level1/${saved}`;
+  });
   const [theory, setTheory] = useState('');
   const [initialCode, setInitialCode] = useState('');
   const [sampleCode, setSampleCode] = useState('');
   const [completedWeeks, setCompletedWeeks] = useState(() => {
     const saved = localStorage.getItem('python_completed_weeks');
-    return saved ? JSON.parse(saved) : [];
+    if (!saved) return [];
+    try {
+      const list = JSON.parse(saved);
+      return list.map((id) => (id.includes('/') ? id : `level1/${id}`));
+    } catch {
+      return [];
+    }
   });
 
   // Tải nội dung bài học & code mẫu khi đổi tuần học
@@ -19,6 +29,9 @@ export default function App() {
     // Đặt lại state hiển thị loading
     setTheory('');
     
+    // Lưu lại tuần đang học vào localStorage
+    localStorage.setItem('python_current_week', currentWeekId);
+
     // Tải file lý thuyết README.md
     fetch(`/lessons/${currentWeekId}/README.md`)
       .then((res) => {

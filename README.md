@@ -1,6 +1,6 @@
 # Python Học Vui - Lập trình Python Căn Bản cho Trẻ Em
 
-Chào mừng bạn đến với **Python Học Vui**, một nền tảng học lập trình Python trực quan, sinh động và tương tác cao được thiết kế dành riêng cho trẻ em từ 12 tuổi trở lên. Dự án này giúp các bé làm quen với các khái niệm lập trình cơ bản thông qua giao diện kéo/thả, viết code và chạy trực tiếp ngay trên trình duyệt web.
+Chào mừng bạn đến với **Python Học Vui**, một nền tảng học lập trình Python trực quan, sinh động và tương tác cao được thiết kế dành riêng cho trẻ em từ 12 tuổi trở lên. Dự án này giúp các bé làm quen với các khái niệm lập trình từ căn bản đến nâng cao thông qua giao diện kéo/thả, viết code và chạy trực tiếp ngay trên trình duyệt web.
 
 ---
 
@@ -15,9 +15,9 @@ Chào mừng bạn đến với **Python Học Vui**, một nền tảng học l
 *   **Phản hồi thân thiện & Khích lệ:**
     *   **Thông báo lỗi Việt hóa:** Thay vì hiển thị những dòng thông báo lỗi tiếng Anh khô khan, hệ thống sẽ dịch và đưa ra gợi ý sửa lỗi vô cùng dễ thương (Ví dụ: lỗi lùi lề `IndentationError`, lỗi viết hoa, quên dấu ngoặc...).
     *   **Bắn pháo hoa ăn mừng 🎉:** Khi bé chạy code chính xác và hoàn thành bài tập, hiệu ứng pháo hoa giấy (confetti) sẽ bung tỏa để khích lệ tinh thần bé.
-*   **Lộ trình bài giảng 6 tuần đầy đủ:**
-    *   Từ các lệnh xuất nhập cơ bản cho đến biến, rẽ nhánh logic, vòng lặp, hàm và lập trình hướng đối tượng (OOP).
-    *   Mỗi tuần học đều đi kèm một dự án thực hành nhỏ thú vị (như Vẽ Robot, Game đoán số, Máy tạo biệt danh...).
+*   **Chương trình học đa cấp độ (Level 1 & Level 2 - Tổng cộng 12 bài học):**
+    *   **Cấp độ 1 (Level 1 - Nền tảng):** Lệnh print, biến, rẽ nhánh logic, vòng lặp, hàm và OOP cơ bản.
+    *   **Cấp độ 2 (Level 2 - Thám hiểm):** Ép kiểu, Built-in Functions, List, Tuple, Set, Dictionary, Hàm nâng cao, Lambda & Exception Handling.
 
 ---
 
@@ -27,7 +27,7 @@ Chào mừng bạn đến với **Python Học Vui**, một nền tảng học l
 python_hocvui_level0/
 ├── frontend/               # Mã nguồn ứng dụng Web React + Vite
 │   ├── public/             # Tài nguyên tĩnh
-│   │   └── lessons/        # Bản sao các bài học phục vụ fetch API
+│   │   └── lessons/        # Bản sao các bài học phục vụ fetch API (level1, level2)
 │   ├── src/                # Source code React (Component, Styles, Utils)
 │   │   ├── components/     # Các cột giao diện (Theory, Practice, Sidebar)
 │   │   ├── utils/          # Bộ tô sáng cú pháp code Python
@@ -35,18 +35,26 @@ python_hocvui_level0/
 │   │   └── index.css       # File cấu hình giao diện & CSS tùy chỉnh phong cách trẻ em
 │   ├── package.json        # Danh sách thư viện và tập lệnh frontend
 │   └── vite.config.js      # Cấu hình Vite bundler
-├── lessons/                # Thư mục gốc chứa nội dung 6 tuần học của bé
-│   ├── week1_intro/        # Tuần 1: Lệnh print() & dự án Vẽ Robot
-│   ├── week2_variables/    # Tuần 2: Biến & dự án Hộp quà sinh nhật
-│   ├── week3_conditions/   # Tuần 3: Câu điều kiện if-else & Game đoán số
-│   ├── week4_loops/        # Tuần 4: Vòng lặp & dự án Đếm sao
-│   ├── week5_functions/    # Tuần 5: Hàm & Máy tạo tên biệt danh
-│   └── week6_classes/      # Tuần 6: Lớp và Đối tượng & Siêu anh hùng
+├── lessons/                # Thư mục gốc chứa nội dung bài giảng
+│   ├── level1/             # Cấp độ 1: Căn bản (6 tuần học)
+│   │   ├── week1_intro/
+│   │   ├── week2_variables/
+│   │   ├── week3_conditions/
+│   │   ├── week4_loops/
+│   │   ├── week5_functions/
+│   │   └── week6_classes/
+│   └── level2/             # Cấp độ 2: Thám hiểm & Nâng cao (6 tuần học)
+│       ├── week1_typecast_builtins/
+│       ├── week2_list/
+│       ├── week3_tuple_set/
+│       ├── week4_dictionary/
+│       ├── week5_functions_advanced/
+│       └── week6_exceptions/
 └── tasks/                  # Ghi chú các tác vụ phát triển hệ thống
 ```
 
 > [!NOTE]
-> Thư mục `lessons/` ở gốc và thư mục `frontend/public/lessons/` có cấu trúc nội dung giống nhau. Ứng dụng React trong thư mục `frontend` sẽ thực hiện tải động (`fetch`) lý thuyết từ đường dẫn `/lessons/` trên môi trường web.
+> Thư mục `lessons/` ở gốc và thư mục `frontend/public/lessons/` có cấu trúc nội dung giống nhau. Ứng dụng React trong thư mục `frontend` sẽ thực hiện tải động (`fetch`) lý thuyết từ đường dẫn `/lessons/levelX/...` trên môi trường web.
 
 ---
 
@@ -76,61 +84,31 @@ cd frontend
 npm install
 ```
 
-Tập lệnh này sẽ tải tất cả các thư viện cần thiết bao gồm:
-*   `react` & `react-dom` (v19)
-*   `vite` (v8)
-*   `bootstrap` (v5)
-*   `react-markdown` (để kết xuất bài giảng từ file Markdown)
-*   `canvas-confetti` (hiệu ứng pháo hoa)
-*   `lucide-react` (bộ icon đẹp mắt)
-
 ### Bước 3: Khởi chạy môi trường phát triển (Development)
 Chạy lệnh sau trong thư mục `frontend` để khởi động máy chủ thử nghiệm cục bộ:
 ```bash
 npm run dev
 ```
 
-Sau khi chạy thành công, terminal sẽ hiển thị địa chỉ truy cập cục bộ (thường là `http://localhost:5173`). Bạn chỉ cần copy và dán liên kết này vào trình duyệt để trải nghiệm website!
-
-### Bước 4: Kiểm tra mã lỗi (Linting)
-Bạn có thể kiểm tra lỗi code và định dạng bằng thư viện `oxlint` cực nhanh đã được cấu hình sẵn:
-```bash
-npm run lint
-```
-
-### Bước 5: Biên dịch dự án cho Production (Optional)
-Khi dự án đã sẵn sàng để triển khai thực tế, bạn tiến hành đóng gói tối ưu mã nguồn:
-```bash
-npm run build
-```
-
-Các file sau khi biên dịch sẽ nằm trong thư mục `frontend/dist/`. Bạn có thể chạy thử bản build này bằng lệnh:
-```bash
-npm run preview
-```
-
 ---
 
-## 📘 Chi tiết Chương trình học 6 tuần của bé
+## 📘 Chi tiết Chương trình học theo Cấp độ
 
-1.  **Tuần 1: Chào bạn, mình là Python!**
-    *   **Khái niệm:** Giới thiệu lập trình là gì, cú pháp và cách hoạt động của lệnh in dữ liệu `print()`.
-    *   **Dự án:** Bé tự viết code vẽ chú Robot dễ thương trên màn hình terminal và thay đổi lời chào của Robot.
-2.  **Tuần 2: Chiếc hộp kỳ diệu 📦**
-    *   **Khái niệm:** Biến số là gì (khái niệm chiếc hộp chứa đồ), cách đặt tên biến, gán giá trị và các kiểu dữ liệu cơ bản (Số, Chữ, Đúng/Sai).
-    *   **Dự án:** Tạo ứng dụng đếm tuổi của bé và tính xem bé sẽ bao nhiêu tuổi vào năm 2030.
-3.  **Tuần 3: Ngã rẽ quyết định 🚦**
-    *   **Khái niệm:** Cách đưa ra quyết định trong lập trình thông qua câu lệnh điều kiện `if`, `elif`, `else` và các phép so sánh toán học.
-    *   **Dự án:** Lập trình trò chơi đoán số bí mật từ 1 đến 10, đưa ra gợi ý "lớn quá" hoặc "nhỏ quá" cho người chơi.
-4.  **Tuần 4: Vòng lặp vui vẻ 🔁**
-    *   **Khái niệm:** Tiết kiệm sức lao động bằng vòng lặp `for` và `while` để thực hiện lặp đi lặp lại các công việc giống nhau.
-    *   **Dự án:** Vẽ một bầu trời đầy sao lấp lánh và in ra bảng cửu chương chỉ bằng vài dòng lệnh ngắn gọn.
-5.  **Tuần 5: Nhà máy phép thuật 🏭**
-    *   **Khái niệm:** Cách định nghĩa hàm (`def`), tham số truyền vào hàm và giá trị trả về (`return`) để tái sử dụng mã nguồn.
-    *   **Dự án:** Xây dựng một "Máy chế tạo biệt danh siêu ngầu" tự động ghép tên của bé với các tính từ siêu anh hùng.
-6.  **Tuần 6: Bản thiết kế siêu anh hùng 🦸**
-    *   **Khái niệm:** Nhập môn Lập trình Hướng đối tượng (OOP) thông qua hình ảnh Lớp (`class`) như bản thiết kế và Đối tượng (`object`) là thực thể ngoài đời thực.
-    *   **Dự án:** Bé tạo ra các siêu anh hùng khác nhau với tên gọi, siêu năng lực riêng và cho họ so tài sức mạnh với nhau.
+### 🟢 CẤP ĐỘ 1: CĂN BẢN (LEVEL 1)
+1. **Tuần 1: Chào bạn, mình là Python!** - Lệnh `print()` & Dự án Robot chào hỏi.
+2. **Tuần 2: Chiếc hộp kỳ diệu 📦** - Biến số, kiểu dữ liệu cơ bản & Dự án tính tuổi.
+3. **Tuần 3: Ngã rẽ quyết định 🚦** - Điều kiện `if-elif-else` & Game đoán số.
+4. **Tuần 4: Vòng lặp vui vẻ 🔁** - Vòng lặp `for`/`while` & Dự án bầu trời sao.
+5. **Tuần 5: Nhà máy phép thuật 🏭** - Định nghĩa Hàm (`def`) & Máy tạo biệt danh.
+6. **Tuần 6: Bản thiết kế siêu anh hùng 🦸** - Nhập môn Lớp (`class`) và Đối tượng (`object`).
+
+### 🔵 CẤP ĐỘ 2: THÁM HIỂM (LEVEL 2)
+1. **Tuần 1: Siêu công cụ 🧰** - Ép kiểu dữ liệu (`int`, `str`, `float`) & Hàm Built-in (`len`, `max`, `min`, `sum`, `round`).
+2. **Tuần 2: Balo danh sách 🎒** - Cấu trúc dữ liệu `List`, chỉ số Index, phương thức `append`, `pop`, `remove`, `sort`.
+3. **Tuần 3: Huy hiệu & Tọa độ 🧭** - `Tuple` (bộ cố định bất biến) & `Set` (tập hợp độc nhất không trùng).
+4. **Tuần 4: Từ điển thông minh 📖** - `Dictionary` với cặp `Key: Value`, tra cứu siêu tốc, `.items()`, `.keys()`.
+5. **Tuần 5: Xưởng nâng cấp ⚡** - Biến Global/Local, Tham số mặc định, `*args` linh hoạt & Biểu thức `lambda`.
+6. **Tuần 6: Khiên bảo vệ 🛡️** - Bắt lỗi & Xử lý ngoại lệ (`try...except...finally`), phòng tránh crash ứng dụng.
 
 ---
 
