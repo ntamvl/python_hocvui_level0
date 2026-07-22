@@ -15,9 +15,10 @@ Chào mừng bạn đến với **Python Học Vui**, một nền tảng học l
 *   **Phản hồi thân thiện & Khích lệ:**
     *   **Thông báo lỗi Việt hóa:** Thay vì hiển thị những dòng thông báo lỗi tiếng Anh khô khan, hệ thống sẽ dịch và đưa ra gợi ý sửa lỗi vô cùng dễ thương (Ví dụ: lỗi lùi lề `IndentationError`, lỗi viết hoa, quên dấu ngoặc...).
     *   **Bắn pháo hoa ăn mừng 🎉:** Khi bé chạy code chính xác và hoàn thành bài tập, hiệu ứng pháo hoa giấy (confetti) sẽ bung tỏa để khích lệ tinh thần bé.
-*   **Chương trình học đa cấp độ (Level 1 & Level 2 - Tổng cộng 12 bài học):**
+*   **Chương trình học đa cấp độ (Level 1, Level 2 & Level 3 - Tổng cộng 18 bài học):**
     *   **Cấp độ 1 (Level 1 - Nền tảng):** Lệnh print, biến, rẽ nhánh logic, vòng lặp, hàm và OOP cơ bản.
     *   **Cấp độ 2 (Level 2 - Thám hiểm):** Ép kiểu, Built-in Functions, List, Tuple, Set, Dictionary, Hàm nâng cao, Lambda & Exception Handling.
+    *   **Cấp độ 3 (Level 3 - Chuyên gia):** Hàm đệ quy (Recursion), Thuật toán sắp xếp (Sorting Algorithms), Kế thừa OOP (Inheritance), Phân loại phương thức (Methods) & Dunder Methods.
 
 ---
 
@@ -27,7 +28,7 @@ Chào mừng bạn đến với **Python Học Vui**, một nền tảng học l
 python_hocvui_level0/
 ├── frontend/               # Mã nguồn ứng dụng Web React + Vite
 │   ├── public/             # Tài nguyên tĩnh
-│   │   └── lessons/        # Bản sao các bài học phục vụ fetch API (level1, level2)
+│   │   └── lessons/        # Bản sao các bài học phục vụ fetch API (level1, level2, level3)
 │   ├── src/                # Source code React (Component, Styles, Utils)
 │   │   ├── components/     # Các cột giao diện (Theory, Practice, Sidebar)
 │   │   ├── utils/          # Bộ tô sáng cú pháp code Python
@@ -43,13 +44,20 @@ python_hocvui_level0/
 │   │   ├── week4_loops/
 │   │   ├── week5_functions/
 │   │   └── week6_classes/
-│   └── level2/             # Cấp độ 2: Thám hiểm & Nâng cao (6 tuần học)
-│       ├── week1_typecast_builtins/
-│       ├── week2_list/
-│       ├── week3_tuple_set/
-│       ├── week4_dictionary/
-│       ├── week5_functions_advanced/
-│       └── week6_exceptions/
+│   ├── level2/             # Cấp độ 2: Thám hiểm & Nâng cao (6 tuần học)
+│   │   ├── week1_typecast_builtins/
+│   │   ├── week2_list/
+│   │   ├── week3_tuple_set/
+│   │   ├── week4_dictionary/
+│   │   ├── week5_functions_advanced/
+│   │   └── week6_exceptions/
+│   └── level3/             # Cấp độ 3: Chuyên gia (6 tuần học)
+│       ├── week1_recursion/
+│       ├── week2_sorting/
+│       ├── week3_inheritance/
+│       ├── week4_methods/
+│       ├── week5_dunder/
+│       └── week6_synthesis/
 └── tasks/                  # Ghi chú các tác vụ phát triển hệ thống
 ```
 
@@ -109,6 +117,14 @@ npm run dev
 4. **Tuần 4: Từ điển thông minh 📖** - `Dictionary` với cặp `Key: Value`, tra cứu siêu tốc, `.items()`, `.keys()`.
 5. **Tuần 5: Xưởng nâng cấp ⚡** - Biến Global/Local, Tham số mặc định, `*args` linh hoạt & Biểu thức `lambda`.
 6. **Tuần 6: Khiên bảo vệ 🛡️** - Bắt lỗi & Xử lý ngoại lệ (`try...except...finally`), phòng tránh crash ứng dụng.
+
+### 🔴 CẤP ĐỘ 3: CHUYÊN GIA (LEVEL 3)
+1. **Tuần 1: Búp bê Nga Matryoshka 🪆** - Hàm Đệ quy (`Recursion`), Điểm dừng (`Base Case`) & Ngăn xếp lời gọi hàm.
+2. **Tuần 2: Thợ may xếp hàng 📊** - Thuật toán Sắp xếp (`Sorting Algorithms`: Bubble Sort, Selection Sort) & Hoán đổi (`Swapping`).
+3. **Tuần 3: Gia đình Siêu anh hùng 🦸‍♂️** - Kế thừa trong OOP (`Inheritance`), Lớp Cha/Con, hàm `super()` & Ghi đè phương thức.
+4. **Tuần 4: Tuyệt chiêu của Class 🛠️** - Phân loại phương thức (`Instance Method`, `@classmethod`, `@staticmethod`) & Decorator.
+5. **Tuần 5: Phép thuật Python 🪄** - Phương thức kỳ diệu Dunder (`__init__`, `__str__`, `__len__`, `__eq__`, `__add__`) & Nạp chồng toán tử.
+6. **Tuần 6: Đấu trường Huyền thoại 🏆** - Dự án Tổng hợp Level 3 (Đấu trường Quái thú Python).
 
 ---
 

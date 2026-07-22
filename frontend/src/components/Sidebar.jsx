@@ -27,24 +27,36 @@ const levels = [
       { id: 'level2/week5_functions_advanced', title: 'Tuần 5: Xưởng nâng cấp ⚡', desc: 'Hàm nâng cao & Lambda' },
       { id: 'level2/week6_exceptions', title: 'Tuần 6: Khiên bảo vệ 🛡️', desc: 'Xử lý lỗi & Exception' }
     ]
+  },
+  {
+    id: 'level3',
+    title: 'Cấp 3: Chuyên Gia 🏆',
+    subtitle: 'Thuật toán & OOP Nâng cao',
+    weeks: [
+      { id: 'level3/week1_recursion', title: 'Tuần 1: Búp bê Matryoshka 🪆', desc: 'Hàm Đệ quy (Recursion)' },
+      { id: 'level3/week2_sorting', title: 'Tuần 2: Thợ may xếp hàng 📊', desc: 'Thuật toán Sắp xếp' },
+      { id: 'level3/week3_inheritance', title: 'Tuần 3: Siêu anh hùng 🦸‍♂️', desc: 'Kế thừa trong OOP' },
+      { id: 'level3/week4_methods', title: 'Tuần 4: Tuyệt chiêu Class 🛠️', desc: 'Instance, Class & Static' },
+      { id: 'level3/week5_dunder', title: 'Tuần 5: Phép thuật Python 🪄', desc: 'Phương thức Dunder' },
+      { id: 'level3/week6_synthesis', title: 'Tuần 6: Đấu trường Võ thuật 🏆', desc: 'Dự án Tổng hợp Level 3' }
+    ]
   }
 ];
 
 export default function Sidebar({ currentWeekId, onSelectWeek, completedWeeks }) {
-  // Xác định tab đang chọn dựa trên currentWeekId
-  const currentLevelId = currentWeekId.startsWith('level2/') ? 'level2' : 'level1';
-  const [activeLevelId, setActiveLevelId] = useState(currentLevelId);
+  const levelIdFromWeek = currentWeekId.split('/')[0] || 'level1';
+  const [activeLevelId, setActiveLevelId] = useState(levelIdFromWeek);
 
-  // Tự động chuyển tab khi currentWeekId thay đổi bên ngoài
+  // Tự động chuyển tab khi currentWeekId thay đổi từ bên ngoài
   useEffect(() => {
-    if (currentWeekId.startsWith('level2/')) {
-      setActiveLevelId('level2');
-    } else if (currentWeekId.startsWith('level1/')) {
-      setActiveLevelId('level1');
+    const lvlId = currentWeekId.split('/')[0];
+    if (lvlId && levels.some((l) => l.id === lvlId)) {
+      setActiveLevelId(lvlId);
     }
   }, [currentWeekId]);
 
   const activeLevelObj = levels.find((l) => l.id === activeLevelId) || levels[0];
+  const totalWeeks = levels.reduce((acc, l) => acc + l.weeks.length, 0);
 
   return (
     <aside className="kids-sidebar">
@@ -53,7 +65,7 @@ export default function Sidebar({ currentWeekId, onSelectWeek, completedWeeks })
         <div className="sidebar-subtitle">Lập trình cho Siêu Nhí (12+)</div>
       </div>
 
-      {/* Thanh chuyển đổi Cấp độ (Level 1 / Level 2) */}
+      {/* Thanh chuyển đổi Cấp độ (Level 1 / Level 2 / Level 3) */}
       <div className="level-selector">
         {levels.map((lvl) => {
           const isActive = lvl.id === activeLevelId;
@@ -103,7 +115,7 @@ export default function Sidebar({ currentWeekId, onSelectWeek, completedWeeks })
       <div className="p-3 border-top text-center" style={{ backgroundColor: '#fafafa', borderRadius: '0 0 0 16px' }}>
         <div className="d-flex align-items-center justify-content-center gap-2" style={{ fontWeight: 800, color: 'var(--color-purple)' }}>
           <Award size={22} />
-          <span>Hoàn thành: {completedWeeks.length} / 12</span>
+          <span>Hoàn thành: {completedWeeks.length} / {totalWeeks}</span>
         </div>
       </div>
     </aside>
